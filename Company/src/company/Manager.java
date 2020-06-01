@@ -5,21 +5,9 @@ import java.util.Date;
 import department.Department;
 
 public class Manager extends Employee {
-
-	private Department department;
-
+	
 	public Manager(String name, Date hireDate, Department department) {
-		super(name, hireDate);
-		this.department = department;
-	}
-	
-	public void setDepartment(Department department) {
-		this.department = department;
-	}
-	
-	@Override
-	public Department getDepartment() {
-		return department;
+		super(name, hireDate, department);
 	}
 
 	@Override
@@ -29,7 +17,7 @@ public class Manager extends Employee {
 
 	@Override
 	public String toString() {
-		return "Manager [name= " + getName() + ", department= " + department.getName() + ", salary= "
+		return "Manager [name= " + getName() + ", department= " + getDepartment().getName() + ", salary= "
 				+ getSalary() + ", hireDate= " + getHireDate() + "]";
 	}
 
