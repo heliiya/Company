@@ -7,10 +7,10 @@ import department.Department;
 public class Bussiness extends Employee{
 
 	private String media;
-	private Department department;
 
-	public Bussiness(String name, Date hireDate, String media) {
-		super(name, hireDate);
+	public Bussiness(String name, Date hireDate, Department department,
+			String media) {
+		super(name, hireDate, department);
 		this.media = media;
 	}
 
@@ -22,15 +22,6 @@ public class Bussiness extends Employee{
 		this.media = media;
 	}
 
-	public void setDepartment(Department department) {
-		this.department = department;
-	}
-
-	@Override
-	public Department getDepartment() {
-		return department;
-	}
-
 	@Override
 	public long getSalary() {
 		return 3000;
@@ -39,7 +30,7 @@ public class Bussiness extends Employee{
 	@Override
 	public String toString() {
 		return "Bussiness [name= " + getName() + ", media= " + media + ", salary= " + getSalary()
-				+ ", department= " + department.getName() + ", hireDate= " + getHireDate() + "]";
+				+ ", department= " + getDepartment().getName() + ", hireDate= " + getHireDate() + "]";
 	}
 
 	
