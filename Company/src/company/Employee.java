@@ -8,11 +8,13 @@ public abstract class Employee {
 	
 	private String name;
 	private Date hireDate;
+	private Department department;
 	
-	public Employee(String name, Date hireDate) {
+	public Employee(String name, Date hireDate, Department department) {
 		super();
 		this.name = name;
 		this.hireDate = hireDate;
+		this.department = department;
 	}
 
 	public String getName() {
@@ -31,9 +33,15 @@ public abstract class Employee {
 		return hireDate;
 	}
 	
-	public abstract long getSalary();
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
 
-	public abstract Department getDepartment();
+	public Department getDepartment(){
+		return department;
+	}
+
+	public abstract long getSalary();
 
 	@Override
 	public String toString() {
