@@ -9,10 +9,10 @@ public class Developer extends Employee{
 	
 	private DeveloperLanguage developerLanguage;
 	private DeveloperType developerType;
-	private Department department;
 	
-	public Developer(String name, Date hireDate, DeveloperLanguage developerLanguage, DeveloperType developerType) {
-		super(name, hireDate);
+	public Developer(String name, Date hireDate, Department department,
+			DeveloperLanguage developerLanguage, DeveloperType developerType) {
+		super(name, hireDate, department);
 		this.developerLanguage = developerLanguage;
 		this.developerType = developerType;
 	}
@@ -33,15 +33,6 @@ public class Developer extends Employee{
 		this.developerType = developerType;
 	}
 
-	public void setDepartment(Department department) {
-		this.department = department;
-	}
-
-	@Override
-	public Department getDepartment() {
-		return department;
-	}
-
 	@Override
 	public long getSalary() {
 		return 4000;
@@ -51,7 +42,7 @@ public class Developer extends Employee{
 	public String toString() {
 		return "Developer [name= " + getName() + ", language= " + developerLanguage.getName() + ", type= " + developerType.getName()
 				+ ", salary= " + getSalary() + ", department= "
-				+ department.getName() + ", hireDate= " + getHireDate() + "]";
+				+ getDepartment().getName() + ", hireDate= " + getHireDate() + "]";
 	}
 
 }
