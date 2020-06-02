@@ -14,19 +14,19 @@ public class Main {
 		@SuppressWarnings("deprecation")
 		Date date = new Date(now.getYear(), now.getMonthValue(), now.getDayOfMonth());
 
-		Department department1 = new Department("ZOMOROD DEPARTMENT");
-		Employee manager = new Manager("Sara", date, department1);
+		Department department = new Department("ZOMOROD DEPARTMENT");
+		Employee manager = new Manager("Sara", date, department);
 		print(manager.toString());
 
-		Employee developer = new Developer("Heliya", date, DeveloperLanguage.JAVA, DeveloperType.JUNIOR);
-		department1.addDeveloperToDepartment((Developer) developer);
+		Employee developer = new Developer("Heliya", date, department, DeveloperLanguage.JAVA, DeveloperType.JUNIOR);
+		department.addDeveloperToDepartment((Developer) developer);
 		print(developer.toString());
 		
-		Employee bussiness = new Bussiness("Mahsa", date, "Mahsa's media");
-		department1.addBussinessToDepartment((Bussiness) bussiness);
+		Employee bussiness = new Bussiness("Mahsa", date, department, "Mahsa's media");
+		department.addBussinessToDepartment((Bussiness) bussiness);
 		print(bussiness.toString());
 		
-		print(department1.toString());
+		print(department.toString());
 	}
 
 	private static void print(String text) {
